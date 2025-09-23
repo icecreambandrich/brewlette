@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")   // e.g. Vercel pooled: POSTGRES_PRISMA_URL
+  directUrl = env("DIRECT_URL")     // e.g. Vercel non-pooled: POSTGRES_URL_NON_POOLING
 }
 
 model CoffeeShop {
