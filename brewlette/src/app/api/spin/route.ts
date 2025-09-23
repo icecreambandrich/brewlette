@@ -14,6 +14,23 @@ function haversineDistance(lat1: number, lon1: number, lat2: number, lon2: numbe
   return R * c
 }
 
+export async function GET() {
+  return NextResponse.json({
+    ok: true,
+    message: 'Use POST /api/spin with JSON body to get a coffee shop recommendation.',
+    expects: {
+      lat: 'number (e.g. 51.5135)',
+      lng: 'number (e.g. -0.0983)',
+      radius: 'number in meters (800 for 5min, 1600 for 10min)'
+    },
+    example: {
+      lat: 51.5135,
+      lng: -0.0983,
+      radius: 800
+    }
+  })
+}
+
 // Lookup nearby postcodes around a location using postcodes.io search endpoint
 async function getNearbyPostcodes(lat: number, lng: number, radius: number, limit = 200): Promise<Map<string, {lat: number, lng: number}>> {
   const out = new Map<string, {lat: number, lng: number}>()
