@@ -152,7 +152,7 @@ export default function Home() {
             <span>BREWLETTE</span>
           </h1>
           <p className="text-white/90 text-xl font-black drop-shadow-md" style={{fontFamily: 'serif'}}>
-            One spin, one coffee, endless choices
+            Spin the city. Sip the coffee. London only.
           </p>
         </div>
 
