@@ -25,7 +25,7 @@ interface SpinResult {
 
 export default function Home() {
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null)
-  const [distance, setDistance] = useState<number>(5) // Default 5 minutes
+  const [distance, setDistance] = useState<number>(400) // Default 400 meters
   const [isSpinning, setIsSpinning] = useState(false)
   const [result, setResult] = useState<SpinResult | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -61,8 +61,6 @@ export default function Home() {
     setResult(null)
 
     try {
-      // Convert walking time to radius: 5min = 800m, 10min = 1600m
-      const radius = distance === 5 ? 800 : 1600
 
       const response = await fetch('/api/spin', {
         method: 'POST',
@@ -72,7 +70,7 @@ export default function Home() {
         body: JSON.stringify({
           lat: location.lat,
           lng: location.lng,
-          radius: radius
+          radius: distance
         }),
       })
 
@@ -215,7 +213,7 @@ export default function Home() {
 
             <div className="text-center text-white/80 bg-white/10 backdrop-blur-sm rounded-xl p-3">
               <span className="text-lg">
-                Found {result.totalShopsInRange} coffee shops within {distance} minute{distance !== 1 ? 's' : ''} walk
+                Found {result.totalShopsInRange} coffee shops within {distance}m walk
               </span>
             </div>
           </div>
