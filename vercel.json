@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "cd brewlette && npm run build",
-  "devCommand": "cd brewlette && npm run dev",
-  "installCommand": "npm install && cd brewlette && npm install",
-  "outputDirectory": "brewlette/.next"
+  "root": "brewlette",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next"
 }
