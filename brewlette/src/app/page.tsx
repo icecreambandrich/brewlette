@@ -187,7 +187,6 @@ export default function Home() {
                 <div className="flex items-center justify-center space-x-2">
                   <span className="text-xl">🎲</span>
                   <span className="text-xl">Spin for Coffee</span>
-                  <span className="text-xl">☕</span>
                 </div>
               </button>
             )}
