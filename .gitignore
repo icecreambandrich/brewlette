@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment
+.env
+brewlette/.env
+
+# Next.js and build artifacts
+brewlette/.next/
+brewlette/.turbo/
+brewlette/.vercel/
+brewlette/out/
+brewlette/.cache/
+
+# Prisma / generated
+/generated/prisma
+brewlette/generated/
+brewlette/prisma/dev.db
+brewlette/prisma/dev.db-journal
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
