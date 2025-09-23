@@ -10,9 +10,7 @@ interface CoffeeShopRow {
   name: string
   address: string
   postcode: string
-  lat: string
-  lng: string
-  borough: string
+  'review count': string
   rating: string
 }
 
@@ -43,15 +41,22 @@ async function importCoffeeShops() {
           
           // Insert new data
           for (const record of records) {
+            const rating = parseFloat(record.rating)
+            // Skip records with invalid or missing ratings
+            if (isNaN(rating) || rating === 0) {
+              console.log(`⚠️ Skipping ${record.name} - invalid rating: ${record.rating}`)
+              continue
+            }
+            
             await prisma.coffeeShop.create({
               data: {
                 name: record.name,
                 address: record.address,
-                postcode: record.postcode,
-                lat: parseFloat(record.lat),
-                lng: parseFloat(record.lng),
-                borough: record.borough,
-                rating: parseFloat(record.rating)
+                postcode: record.postcode || null,
+                reviewCount: parseInt(record['review count']) || null,
+                rating: rating,
+                lat: null, // Will be geocoded later
+                lng: null  // Will be geocoded later
               }
             })
           }
