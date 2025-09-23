@@ -1,4 +1,13 @@
 {
+  "name": "brewlette-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd brewlette && npm run build",
+    "dev": "cd brewlette && npm run dev",
+    "start": "cd brewlette && npm run start",
+    "install-deps": "cd brewlette && npm install"
+  },
   "devDependencies": {
     "prisma": "^6.16.2",
     "tsx": "^4.20.5"
