@@ -92,11 +92,9 @@ export default function CoffeeShopCard({ shop }: CoffeeShopCardProps) {
         {/* Google Maps Button */}
         <button
           onClick={handleOpenInMaps}
-          className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-3"
+          className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 flex items-center justify-center"
         >
-          <span className="text-xl">🗺️</span>
           <span className="text-lg">Open in Google Maps</span>
-          <span className="text-xl">📍</span>
         </button>
       </div>
     </div>

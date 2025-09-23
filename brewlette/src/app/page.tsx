@@ -214,8 +214,8 @@ export default function Home() {
             </div>
 
             <div className="text-center text-white/80 bg-white/10 backdrop-blur-sm rounded-xl p-3">
-              <span className="text-sm">
-                ✨ Found {result.totalShopsInRange} coffee shops within {distance} minute{distance !== 1 ? 's' : ''} walk
+              <span className="text-lg">
+                Found {result.totalShopsInRange} coffee shops within {distance} minute{distance !== 1 ? 's' : ''} walk
               </span>
             </div>
           </div>
