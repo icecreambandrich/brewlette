@@ -25,7 +25,7 @@ interface SpinResult {
 
 export default function Home() {
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null)
-  const [distance, setDistance] = useState<number>(400) // Default 400 meters
+  const [distance, setDistance] = useState<number>(300) // Default 300 meters
   const [isSpinning, setIsSpinning] = useState(false)
   const [result, setResult] = useState<SpinResult | null>(null)
   const [error, setError] = useState<string | null>(null)

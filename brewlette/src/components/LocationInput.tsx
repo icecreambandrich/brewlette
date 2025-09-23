@@ -206,7 +206,7 @@ export default function LocationInput({
         </h3>
         
         <div className="grid grid-cols-2 gap-2">
-          {[400, 800].map((meters) => (
+          {[300, 600].map((meters) => (
             <button
               key={meters}
               onClick={() => onDistanceChange(meters)}
