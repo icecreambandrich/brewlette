@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model CoffeeShop {
+  id          Int     @id @default(autoincrement())
+  name        String
+  address     String
+  postcode    String?
+  reviewCount Int?
+  rating      Float
+  lat         Float?
+  lng         Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("coffee_shops")
+  @@index([lat, lng])
+  @@index([postcode])
+}
