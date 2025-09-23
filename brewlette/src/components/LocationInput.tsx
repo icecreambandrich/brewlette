@@ -206,17 +206,17 @@ export default function LocationInput({
         </h3>
         
         <div className="grid grid-cols-2 gap-2">
-          {[300, 600].map((meters) => (
+          {[ { label: '5 min', value: 300 }, { label: '10 min', value: 600 } ].map((option) => (
             <button
-              key={meters}
-              onClick={() => onDistanceChange(meters)}
+              key={option.value}
+              onClick={() => onDistanceChange(option.value)}
               className={`py-1.5 px-2.5 rounded-xl font-medium text-sm transition-all duration-200 shadow-lg ${
-                distance === meters
+                distance === option.value
                   ? 'bg-white/30 text-white border-2 border-white/40'
                   : 'bg-white/10 text-white/80 hover:bg-white/20 border-2 border-white/20'
               }`}
             >
-              {meters}m
+              {option.label}
             </button>
           ))}
         </div>

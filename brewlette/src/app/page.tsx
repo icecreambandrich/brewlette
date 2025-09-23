@@ -213,7 +213,7 @@ export default function Home() {
 
             <div className="text-center text-white/80 bg-white/10 backdrop-blur-sm rounded-xl p-3">
               <span className="text-lg">
-                Found {result.totalShopsInRange} coffee shops within {distance}m walk
+                Found {result.totalShopsInRange} coffee shops within {distance === 300 ? 5 : 10} minutes walk
               </span>
             </div>
           </div>
