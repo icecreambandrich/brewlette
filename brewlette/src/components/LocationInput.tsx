@@ -174,7 +174,7 @@ export default function LocationInput({
               value={postcode}
               onChange={(e) => setPostcode(e.target.value.toUpperCase())}
               placeholder="Enter postcode (e.g. SW1A 1AA)"
-              className="w-full px-3 py-2 border-2 border-white/20 rounded-xl bg-white/10 text-white text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 backdrop-blur-sm"
+              className="w-full px-3 py-2 border-2 border-white/20 rounded-xl bg-white/10 text-white text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-white/40 backdrop-blur-sm text-center"
               onKeyPress={(e) => {
                 if (e.key === 'Enter') {
                   geocodePostcode()
