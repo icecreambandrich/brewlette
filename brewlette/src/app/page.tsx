@@ -146,7 +146,7 @@ export default function Home() {
               <span className="text-6xl">☕</span>
             </div>
           </div>
-          <h1 className="text-6xl font-black text-white mb-2 drop-shadow-lg text-center w-full flex justify-center" style={{fontFamily: 'serif', letterSpacing: '0.15em'}}>
+          <h1 className="text-6xl font-black text-white mb-2 drop-shadow-lg text-center w-full flex justify-center" style={{fontFamily: 'serif', letterSpacing: '0.05em'}}>
             <span>BREWLETTE</span>
           </h1>
           <p className="text-white/90 text-xl font-black drop-shadow-md" style={{fontFamily: 'serif'}}>
