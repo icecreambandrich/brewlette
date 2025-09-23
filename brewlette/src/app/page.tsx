@@ -25,7 +25,7 @@ interface SpinResult {
 
 export default function Home() {
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null)
-  const [distance, setDistance] = useState<number>(300) // Default 300 meters
+  const [distance, setDistance] = useState<number>(500) // Default 500 meters
   const [isSpinning, setIsSpinning] = useState(false)
   const [result, setResult] = useState<SpinResult | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -212,7 +212,7 @@ export default function Home() {
 
             <div className="text-center text-white/80 bg-white/10 backdrop-blur-sm rounded-xl p-3">
               <span className="text-lg">
-                Found {result.totalShopsInRange} coffee shops within {distance === 300 ? 5 : 10} minutes walk
+                Found {result.totalShopsInRange} coffee shops within {distance === 500 ? 5 : 10} minutes walk
               </span>
             </div>
           </div>

@@ -206,7 +206,7 @@ export default function LocationInput({
         </h3>
         
         <div className="grid grid-cols-2 gap-2">
-          {[ { label: '5 min', value: 300 }, { label: '10 min', value: 600 } ].map((option) => (
+          {[ { label: '5 min', value: 500 }, { label: '10 min', value: 1000 } ].map((option) => (
             <button
               key={option.value}
               onClick={() => onDistanceChange(option.value)}
