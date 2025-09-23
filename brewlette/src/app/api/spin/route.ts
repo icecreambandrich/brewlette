@@ -231,6 +231,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Distance filtering – prefer shops whose postcodes are near the user
+    // eslint-disable-next-line prefer-const
     let filteredShops: CoffeeShop[] = []
     // Debug counters
     const withCoordsCountInit = allShops.filter(s => s.lat != null && s.lng != null).length

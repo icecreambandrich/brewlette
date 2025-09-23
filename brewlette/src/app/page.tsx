@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import CoffeeSpinner from '@/components/CoffeeSpinner'
 import CoffeeShopCard from '@/components/CoffeeShopCard'
 import LocationInput from '@/components/LocationInput'
@@ -44,11 +44,11 @@ export default function Home() {
   }, [])
 
   // Save recent spins to localStorage
-  const saveRecentSpin = (shop: CoffeeShop) => {
-    const updated = [shop, ...recentSpins.filter(s => s.id !== shop.id)].slice(0, 5)
-    setRecentSpins(updated)
-    localStorage.setItem('brewlette-recent-spins', JSON.stringify(updated))
-  }
+  // const saveRecentSpin = (shop: CoffeeShop) => {
+  //   const updated = [shop, ...recentSpins.filter(s => s.id !== shop.id)].slice(0, 5)
+  //   setRecentSpins(updated)
+  //   localStorage.setItem('brewlette-recent-spins', JSON.stringify(updated))
+  // }
 
   const handleSpin = async () => {
     if (!location) {
@@ -128,6 +128,7 @@ export default function Home() {
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
+{/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="/coffee-background.jpg"
           alt="Coffee background"

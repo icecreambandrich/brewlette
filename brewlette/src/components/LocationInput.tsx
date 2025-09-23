@@ -106,7 +106,7 @@ export default function LocationInput({
     if (locationMethod === 'gps') {
       getCurrentLocation()
     }
-  }, [locationMethod])
+  }, [locationMethod, getCurrentLocation])
 
   return (
     <div className="space-y-2 mb-5">
