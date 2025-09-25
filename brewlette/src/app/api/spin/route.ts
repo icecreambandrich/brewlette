@@ -37,7 +37,10 @@ async function getNearbyPostcodes(lat: number, lng: number, radius: number, limi
   try {
     // postcodes.io radius is in meters, limit max 100 per request – we may paginate if needed
     const cappedLimit = Math.min(limit, 100)
-    const url = `https://api.postcodes.io/postcodes?lon=${lng}&lat=${lat}&radius=${Math.ceil(radius)}&limit=${cappedLimit}`
+    // Use a slightly smaller radius for the postcode search to be conservative, as postcode centroids might be misleading.
+    // The final Haversine check will ensure accuracy.
+    const searchRadius = Math.max(100, radius * 0.9)
+    const url = `https://api.postcodes.io/postcodes?lon=${lng}&lat=${lat}&radius=${Math.ceil(searchRadius)}&limit=${cappedLimit}`
     const res = await fetch(url, { headers: { 'User-Agent': 'Brewlette Coffee App' } })
     if (!res.ok) return out
     const data = await res.json()

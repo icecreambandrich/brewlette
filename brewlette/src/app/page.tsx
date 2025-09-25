@@ -103,6 +103,12 @@ export default function Home() {
     handleSpin()
   }
 
+  const handleOpenRecentInMaps = (shop: CoffeeShop) => {
+    const query = encodeURIComponent(`${shop.name}, ${shop.address}`);
+    const url = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    window.open(url, '_blank');
+  }
+
   const handleCopyShop = async (shop: CoffeeShop) => {
     const textToCopy = `${shop.name}${shop.postcode ? ` - ${shop.postcode}` : ''}`
     
@@ -234,9 +240,9 @@ export default function Home() {
                     📍 {shop.postcode || 'No postcode'} • ⭐ {shop.rating} • {shop.reviewCount || 0} reviews
                   </div>
                   <button
-                    onClick={() => handleCopyShop(shop)}
+                    onClick={() => handleOpenRecentInMaps(shop)}
                     className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 text-white p-2 rounded-lg transition-all duration-200 hover:scale-105"
-                    title="Copy cafe name and postcode"
+                    title="Open in Google Maps"
                   >
                     <svg 
                       className="w-4 h-4" 
@@ -244,12 +250,8 @@ export default function Home() {
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" 
-                      />
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                   </button>
                 </div>
